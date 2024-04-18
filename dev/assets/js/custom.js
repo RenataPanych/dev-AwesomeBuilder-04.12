@@ -1,54 +1,44 @@
-const burger = document.querySelector('.btn-burger')
-const nav = document.querySelector('.header-nav')
-
-console.log(nav);
-
-const toggleMenu =()=> {
-    burger.classList.toggle('open');
-    nav.classList.toggle('show');
-}
-burger.addEventListener('click', toggleMenu);
-
-
 const installGenplan = () => {
     const address = document.querySelector('#address')
     const floor = document.querySelector('#floor')
     const flat = document.querySelector('#flat')
     const builds = document.querySelectorAll('.build-path')
-  
-  
+
+
     builds.forEach(build => {
         build.addEventListener('mouseover', () => {
             const buildAddress = build.getAttribute('data-address')
             const buildFloor = build.getAttribute('data-floor-quantity')
             const buildFlat = build.getAttribute('data-flat-quantity')
-  
-            console.log(buildFloor);
+
             address.innerHTML = buildAddress;
             floor.innerHTML = buildFloor;
             flat.innerHTML = buildFlat;
         })
     })
-  
-  const addBooking =(builds)=> builds.forEach(build =>{
-    const buildLink = build.closest('a')
-    const flatQuantity = build.getAttribute('data-flat-quantity')
-    // const flatQuantityToNumber = Number(flatQuantity);
-    // const flatQuantityToNumber = flatQuantity * 1
-    const flatQuantityToNumber = parseInt(flatQuantity)
-   flatQuantityToNumber ? flatQuantityToNumber >= 0 : buildLink.classList.add('booking')
 
-   buildLink.addEventListener('click', (event)=> {
+    const addBooking =(builds)=> builds.forEach(build =>{
+      const buildLink = build.closest('a')
+      const flatQuantity = build.getAttribute('data-flat-quantity')
+      const flatQuantityToNumber = parseInt(flatQuantity)
+     flatQuantityToNumber ? flatQuantityToNumber >= 0 : buildLink.classList.add('booking')
+ 
+     buildLink.addEventListener('click', (event)=> {
        if (buildLink.classList.contains('booking')) {
-           event.preventDefault()
+         event.preventDefault()
        }
+     })
+ 
    })
-
-})
-addBooking(builds)
+   addBooking(builds)
 }
-     
-  document.querySelector('.genplan') ? installGenplan() : null
+
+document.querySelector('.genplan') ? installGenplan() : null
+
+const headerNav = document.querySelector('.header-nav')
+const hamburger = document.querySelector('.hamburger')
+
+
 
 const installBuild = () => {
     const buildpath1 = document.querySelectorAll('.buildpath1')    
@@ -84,3 +74,20 @@ const installBuild = () => {
         })
     })
 }
+
+document.querySelector('.genplan') ? installBuild() : null
+
+hamburger.addEventListener('click', () => {
+    console.log(hamburger);
+    headerNav.classList.toggle('show')
+})
+
+const arrayBurgers = document.querySelectorAll('.hamburger')
+  
+  if (arrayBurgers.length > 0) {
+      arrayBurgers.forEach(item => {
+        item.addEventListener('click', function(){
+          item.classList.toggle('is-active');
+      })
+    })
+  }

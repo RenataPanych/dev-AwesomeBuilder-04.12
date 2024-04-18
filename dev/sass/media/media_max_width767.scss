@@ -15,8 +15,9 @@
         padding: 0;
        
         &.show {
-            padding: 36px 20px;
-            height: calc(100vh - 73px);
+                background-color: #b9b730a1;
+                padding: 36px 20px;
+                height: calc(100vh - 73px);
     
             a {
                 font-size: 20px;

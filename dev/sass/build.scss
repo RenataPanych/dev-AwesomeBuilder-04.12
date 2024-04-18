@@ -1,9 +1,9 @@
 .buildpath1 {
     fill: #05FFFF;
     fill-opacity: 0;
-    stroke:  #05FFFF; 
+    stroke: #05FFFF;
     stroke-opacity: 0;
-    stroke-width: 5px;
+    stroke-width: 3px;
     cursor: pointer;
 
     &:hover {
@@ -11,14 +11,15 @@
         stroke-opacity: 1;
     }
 }
-.build-info {
+
+.information-build {
     position: absolute;
-    bottom: 4vw;
-    right: 4vw;
+    bottom: 10vw;
+    right: 0vw;
     border: 3px solid #fff;
     padding: 28px;
     border-radius: 12px;
-    background-color: #ffffff79;
+    background-color: #ffffff99;
     backdrop-filter: blur(1px);
     color: #000;
 
@@ -32,8 +33,7 @@
         }
        strong{
         text-decoration: underline;
+         
         }
     }
 }
-
-
